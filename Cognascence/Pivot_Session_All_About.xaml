@@ -1,0 +1,85 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="Cognascence.Pivot_Session_All_About"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait"  Orientation="Portrait"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <!--Pivot Control-->
+        <phone:Pivot Name="Pivot_New_All_About" Title="COGNASCENCE" Loaded="Pivot_Loaded">
+            <!--Pivot item one-->
+            <phone:PivotItem Header="new session" Name="Pivot_Item_New">
+                <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+                    <TextBlock FontSize="23" HorizontalAlignment="Left" Margin="10,11,0,0" TextWrapping="Wrap" Text="Pick the behavior you'd like to modify…" VerticalAlignment="Top"/>
+
+                    <RadioButton FontWeight="SemiBold" FontSize="25" Content="Mood / anxiety" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" GroupName="RadioSessionMode" Name="RadioSessionModeMood"/>
+                    <RadioButton FontWeight="SemiBold" FontSize="25" Content="Eating habits" HorizontalAlignment="Left" Margin="10,91,0,0" VerticalAlignment="Top" GroupName="RadioSessionMode" Name="RadioSessionModeEating"/>
+
+                    <TextBlock FontSize="23" HorizontalAlignment="Left" Margin="48,187,0,0" TextWrapping="Wrap" Text="Pick the session length…" VerticalAlignment="Top"/>
+                    <Image Source="Assets\appbar.clock.png" HorizontalAlignment="Left" Height="54" Margin="0,177,0,0" VerticalAlignment="Top" Width="51" RenderTransformOrigin="0.538,0.574"/>
+
+                    <Slider SmallChange="1" LargeChange="2" Background="Gray" Minimum="1" Maximum="5" Value="3"  HorizontalAlignment="Left" Margin="0,217,0,0" VerticalAlignment="Top" Width="420" Name="SliderSessionDuration"/>
+
+                    <TextBlock FontWeight="SemiBold" FontSize="25" HorizontalAlignment="Left" Margin="10,259,0,0" TextWrapping="Wrap" Text="1 min." VerticalAlignment="Top"/>
+                    <TextBlock FontWeight="SemiBold" FontSize="25" HorizontalAlignment="Left" Margin="180,259,0,0" TextWrapping="Wrap" Text="3 min." VerticalAlignment="Top"/>
+                    <TextBlock FontWeight="SemiBold" FontSize="25" HorizontalAlignment="Left" Margin="340,259,0,0" TextWrapping="Wrap" Text="5 min." VerticalAlignment="Top"/>
+
+                    <Button Content="Start session" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="126,0,124,178" Width="182" Click="Button_Click"></Button>
+
+                </Grid>
+            </phone:PivotItem>
+
+            <!--Pivot item two-->
+            <phone:PivotItem Header="all sessions" Name="Pivot_Item_All">
+                <Grid/>
+            </phone:PivotItem>
+
+            <phone:PivotItem Header="about" Name="Pivot_Item_About">
+
+                <Grid x:Name="ContentPanelAbout" Grid.Row="1" Margin="12,0,12,0">
+
+                    <TextBlock FontSize="36" HorizontalAlignment="Left" Margin="10,-9,0,0" TextWrapping="Wrap" VerticalAlignment="Top">
+                    	<Run Text="The app"/>
+                    </TextBlock>
+
+                    <TextBlock Width="412" FontSize="24" HorizontalAlignment="Left" Margin="10,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="151">
+            	        <Run Text="Inspired by a documentary"/>
+            	        <Run Text=" I watched"/>
+            	        <Run Text=" on BBC One, this app hopes to make you"/>
+            	        <Run Text=" an optimistic and happier person. Be sure to spread the joy :)"/>
+                    </TextBlock>
+
+                    <TextBlock FontSize="36" HorizontalAlignment="Left" Margin="10,198,0,0" TextWrapping="Wrap" VerticalAlignment="Top">
+                    	<Run Text="The developer"/>
+                    </TextBlock>
+
+                    <TextBlock Width="408" FontSize="24" HorizontalAlignment="Left" Margin="10,251,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="168">
+                    	<Run Text="Karan Khiani- Software Developer and Entrepreneur based in Ottawa, Canada."/>
+                    	<LineBreak/>
+                    	<Run Text="And most"/>
+                    	<Run Text=" importantly, I love"/>
+                    	<Run Text=" Windows Phone"/>
+                    </TextBlock>
+
+                    <TextBlock FontSize="36" HorizontalAlignment="Left" Margin="10,426,0,0" TextWrapping="Wrap" Text="Get in touch" VerticalAlignment="Top"/>
+
+                    <Image Tap="Image_Tap_Email" Source="Assets\appbar.email.minimal.png" HorizontalAlignment="Left" Height="100" Margin="-12,463,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="0.538,0.574"/>
+                    <Image Tap="Image_Tap_Linkedin" Source="Assets\appbar.social.linkedin.variant.png" HorizontalAlignment="Left" Height="100" Margin="72,463,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="0.538,0.574"/>
+                    <Image Tap="Image_Tap_Facebook" Source="Assets\appbar.social.facebook.variant.png" HorizontalAlignment="Left" Height="100" Margin="162,463,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="0.538,0.574"/>
+                </Grid>
+
+            </phone:PivotItem>
+        </phone:Pivot>
+    </Grid>
+
+</phone:PhoneApplicationPage>

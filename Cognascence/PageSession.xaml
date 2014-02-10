@@ -1,0 +1,48 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="Cognascence.Page2"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock FontWeight="Medium" FontSize="23" Text="COGNASCENCE" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" Text="in session"/>
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+
+            <TextBlock FontSize="25" HorizontalAlignment="Left" Margin="10,-3,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Name="TextFieldSessionMode"/>
+
+            <Image Tap="Verify_Image_Status" Name="SessionImage1" HorizontalAlignment="Left" Height="218" Margin="10,70,0,0" VerticalAlignment="Top" Width="218"/>
+            <Image Tap="Verify_Image_Status" Name="SessionImage2" HorizontalAlignment="Right" Height="218" Margin="0,70,0,0" VerticalAlignment="Top" Width="218"/>
+            <Image Tap="Verify_Image_Status" Name="SessionImage3" HorizontalAlignment="Left" Height="218" Margin="10,291,0,0" VerticalAlignment="Top" Width="218"/>
+            <Image Tap="Verify_Image_Status" Name="SessionImage4" HorizontalAlignment="Right" Height="218" Margin="0,291,0,0" VerticalAlignment="Top" Width="218"/>
+
+            <ProgressBar Minimum="1" Value="1" Name="ProgressBarSessionDuration" Background="Gray" HorizontalAlignment="Left" Height="24" Margin="53,565,0,0" VerticalAlignment="Top" Width="374" RenderTransformOrigin="0.49,0.663"/>
+            <TextBlock HorizontalAlignment="Left" Margin="66,544,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" x:Name="TextFieldSessionCount"/>
+            <Image Source="/Assets/appbar.clock.png" HorizontalAlignment="Left" Height="80" Margin="0,523,0,0" VerticalAlignment="Top" Width="80" RenderTransformOrigin="0.286,-0.108"/>
+
+        </Grid>
+
+
+    </Grid>
+
+</phone:PhoneApplicationPage>
